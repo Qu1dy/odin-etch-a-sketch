@@ -7,6 +7,9 @@
     <title>Etch A Sketch</title>
 </head>
 <body>
+    <h2>Use the slider to adjust the size of the grid!</h2>
+    <input type="range" min="1" max="100" value="16" class="slider" oninput="this.nextElementSibling.value = this.value">
+    <output></output>
     <div class="container"></div>
     <script src="index.js"></script>
 </body>
