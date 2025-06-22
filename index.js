@@ -18,6 +18,7 @@ const createGrid = () => {
 
 const colorSquare = (square) => {
     square.classList.add("colored");
+    setInterval(() => {square.classList.remove("colored");}, 750);
 }
 
 
