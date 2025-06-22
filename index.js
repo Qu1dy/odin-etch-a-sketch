@@ -2,15 +2,13 @@ const container = document.querySelector(".container");
 const amountOfSquares = document.querySelector(".slider");
 
 
-
 const createGrid = (amountOfSquares) => {
     container.innerHTML = " ";
-    console.log(amountOfSquares)
-    for(i=0;i<amountOfSquares;i++)
+    for(let i=0;i<amountOfSquares;i++)
     {
         const line = document.createElement("div");
         line.classList.add("line");
-        for(j=0;j<amountOfSquares;j++)
+        for(let j=0;j<amountOfSquares;j++)
         {
             const square = document.createElement("div");
             square.style.width = square.style.height = `${700/amountOfSquares}px`; 
@@ -26,7 +24,6 @@ const colorSquare = (square) => {
     square.classList.add("colored");
     setInterval(() => {square.classList.remove("colored");}, 750);
 }
-
 
 
 createGrid(amountOfSquares.value);
