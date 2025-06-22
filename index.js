@@ -1,17 +1,17 @@
 const container = document.querySelector(".container");
-const amountOfSquares = document.querySelector(".slider");
+const slider = document.querySelector(".slider");
 
 
-const createGrid = (amountOfSquares) => {
+const createGrid = (amount) => {
     container.innerHTML = " ";
-    for(let i=0;i<amountOfSquares;i++)
+    for(let i=0;i<amount;i++)
     {
         const line = document.createElement("div");
         line.classList.add("line");
-        for(let j=0;j<amountOfSquares;j++)
+        for(let j=0;j<amount;j++)
         {
             const square = document.createElement("div");
-            square.style.width = square.style.height = `${700/amountOfSquares}px`; 
+            square.style.width = square.style.height = `${700/amount}px`; 
             square.addEventListener("mouseenter", () => colorSquare(square));
             square.classList.add("square");
             line.appendChild(square);
@@ -26,6 +26,6 @@ const colorSquare = (square) => {
 }
 
 
-createGrid(amountOfSquares.value);
+createGrid(slider.value);
 
-amountOfSquares.addEventListener("change", () => {createGrid(amountOfSquares.value)});
+slider.addEventListener("change", () => {createGrid(slider.value)});
