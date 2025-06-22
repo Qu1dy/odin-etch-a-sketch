@@ -8,11 +8,17 @@ const createGrid = () => {
         for(j=0;j<16;j++)
         {
             const square = document.createElement("div");
+            square.addEventListener("mouseenter", () => colorSquare(square));
             square.classList.add("square");
             line.appendChild(square);
         }
         container.appendChild(line)
     }
 }
+
+const colorSquare = (square) => {
+    square.classList.add("colored");
+}
+
 
 createGrid();
