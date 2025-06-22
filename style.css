@@ -1,0 +1,19 @@
+body {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+}
+
+.square  {
+    border: 2px solid black;
+    width: 48px;
+    height: 48px;
+}
+
+.line {
+    display: flex;
+    flex-direction: column;
+}
