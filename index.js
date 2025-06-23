@@ -28,6 +28,14 @@ const createGrid = (amount) => {
 }
 
 const colorSquare = (square) => {
+    let color = square.style.backgroundColor
+
+    //If already colored
+    if(color) {
+        const [r, g, b, a] = color.match(/[\d.]+/g).map(Number);
+        const newOpacity = Math.min(a + 0.1, 1.0);
+        return square.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${newOpacity.toFixed(1)})`;
+    }
     square.style.backgroundColor = getRandomRGB();
 }
 
