@@ -2,6 +2,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
+    background-color: teal;
 }
 
 .slider-text
@@ -12,7 +13,7 @@ body {
 .title 
 {
     margin: 4px;
-    font-size: 36px;
+    font-size: 35px;
 }
 
 .container {
@@ -21,6 +22,7 @@ body {
     max-height: 700px;
     display: flex;
     border: 5px solid black;
+    background-color: white;
 
 }
 
