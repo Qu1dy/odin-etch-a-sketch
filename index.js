@@ -29,7 +29,6 @@ const createGrid = (amount) => {
 
 const colorSquare = (square) => {
     square.style.backgroundColor = getRandomRGB();
-    setTimeout(() => {square.classList.remove("colored");}, 750);
 }
 
 
