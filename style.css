@@ -21,10 +21,6 @@ body {
     flex-direction: column;
 }
 
-.colored {
-    background-color: blue;
-}
-
 .slider {
     width: 750px;
 }
