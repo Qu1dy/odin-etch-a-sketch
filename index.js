@@ -1,6 +1,7 @@
 const container = document.querySelector(".container");
 const slider = document.querySelector(".slider");
 const sliderTextElement = document.querySelector(".slider-text");
+let isMousePressed = false;
 
 const getRandomRGB = () => {
     const r = Math.floor(Math.random() * 256);
@@ -22,7 +23,7 @@ const createGrid = (amount) => {
         {
             const square = document.createElement("div");
             square.style.width = square.style.height = `${700/amount}px`; 
-            square.addEventListener("mouseenter", () => colorSquare(square));
+            square.addEventListener("mouseover", () => colorSquare(square));
             square.classList.add("square");
             line.appendChild(square);
         }
@@ -31,6 +32,7 @@ const createGrid = (amount) => {
 }
 
 const colorSquare = (square) => {
+    if(!isMousePressed) return;
     let color = square.style.backgroundColor
 
     //If already colored
@@ -42,7 +44,11 @@ const colorSquare = (square) => {
     square.style.backgroundColor = getRandomRGB();
 }
 
+const startUpdatingMouseState = () => {
+    document.body.addEventListener("mousedown",() => isMousePressed = true);
+    document.body.addEventListener("mouseup", () => isMousePressed = false);
+}
 
 createGrid(slider.value);
-
+startUpdatingMouseState();
 slider.addEventListener("change", () => {createGrid(slider.value)});
