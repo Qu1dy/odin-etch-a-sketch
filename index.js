@@ -1,4 +1,4 @@
-const container = document.querySelector(".container");
+const colorGrid = document.querySelector(".color-grid");
 const slider = document.querySelector(".slider");
 const sliderTextElement = document.querySelector(".slider-text");
 let isMousePressed = false;
@@ -14,7 +14,7 @@ const createGrid = (amount) => {
     const sliderText = sliderTextElement.textContent;
     const sliderTextNew = `${sliderText.split(":")[0]}: ${amount}x${amount}`
     sliderTextElement.textContent = sliderTextNew;
-    container.innerHTML = " ";
+    colorGrid.innerHTML = " ";
     for(let i=0;i<amount;i++)
     {
         const line = document.createElement("div");
@@ -27,7 +27,7 @@ const createGrid = (amount) => {
             square.classList.add("square");
             line.appendChild(square);
         }
-        container.appendChild(line)
+        colorGrid.appendChild(line)
     }
 }
 
