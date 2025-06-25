@@ -2,7 +2,7 @@ body {
     display: flex;
     align-items: center;
     flex-direction: column;
-    background-color: teal;
+    background-color: #555879;
 }
 
 .slider-text
@@ -21,9 +21,28 @@ body {
     max-width: 700px;
     max-height: 700px;
     display: flex;
-    border: 5px solid black;
+    border: 5px solid #DED3C4;
     background-color: white;
     border-radius: 50px;
+}
+
+.container {
+    display: flex;
+    gap: 20px;
+}
+
+.options {
+    background-color: #98A1BC;
+    border: 5px solid #DED3C4;
+    width: 300px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.options .header {
+    margin-top: 12px;
+    font-size: 32px;
 }
 
 .square {
@@ -36,7 +55,7 @@ body {
 }
 
 .slider {
-    width: 750px;
+    width: 1000px;
 }
 
 .footer {
