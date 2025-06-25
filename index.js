@@ -3,6 +3,9 @@ const slider = document.querySelector(".slider");
 const sliderTextElement = document.querySelector(".slider-text");
 const opacity = document.querySelector("#brush-opacity");
 const rainbowMode = document.querySelector("#rainbow-mode");
+const eraser = document.querySelector("#eraser");
+const checkboxes = document.querySelectorAll("input[type=checkbox]")
+const checkboxesTicked = [];
 let isMousePressed = false;
 
 const getRandomRGB = () => {
@@ -41,8 +44,18 @@ const colorSquare = (square) => {
     {
         if(rainbowMode.checked)
             square.style.backgroundColor = getRandomRGB();
-        else
+        els
             square.style.backgroundColor = `rgba(0,0,0,${opacity.value})`;
+    }
+}
+
+const handleCheckboxes = (checkboxClicked) => {
+    if(checkboxClicked.checked) checkboxesTicked.push(checkboxClicked);
+    else checkboxesTicked.pop(checkboxClicked);
+
+    if(checkboxesTicked.length > 1) {
+        checkboxesTicked[0].checked = false;
+        checkboxesTicked.shift();
     }
 }
 
@@ -55,6 +68,9 @@ const start = () => {
     createGrid(slider.value);
     startUpdatingMouseState();
     slider.addEventListener("change", () => {createGrid(slider.value)});
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener("click", () => handleCheckboxes(checkbox));
+    })
 }
 
 start();
