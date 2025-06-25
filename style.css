@@ -26,6 +26,10 @@ body {
     border-radius: 10px;
 }
 
+.color-grid:hover {
+    cursor: url("images/brush.png"), auto;
+}
+
 .container {
     display: flex;
     gap: 20px;

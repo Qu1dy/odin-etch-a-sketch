@@ -8,6 +8,7 @@ const checkboxes = document.querySelectorAll("input[type=checkbox]")
 const checkboxesTicked = [];
 const clearButton = document.querySelector("#clear");
 let isMousePressed = false;
+let cursorURL = null;
 
 const getRandomRGB = () => {
     const r = Math.floor(Math.random() * 256);
@@ -42,7 +43,6 @@ const colorSquare = (square) => {
     if(!isMousePressed) return;
     let color = square.style.backgroundColor
 
-
     if(eraser.checked)
         return square.style.backgroundColor = "";
     if(!color) 
@@ -54,8 +54,12 @@ const colorSquare = (square) => {
     }
 }
 
+
 const handleCheckboxes = (checkboxClicked) => {
-    if(checkboxClicked.checked) checkboxesTicked.push(checkboxClicked);
+    if(checkboxClicked.checked)
+    {
+        checkboxesTicked.push(checkboxClicked);
+    }
     else checkboxesTicked.pop(checkboxClicked);
 
     if(checkboxesTicked.length > 1) {
@@ -77,7 +81,6 @@ const start = () => {
         checkbox.checked = false;
         checkbox.addEventListener("click", () => handleCheckboxes(checkbox));
     })
-
     clearButton.addEventListener("click", () => createGrid(slider.value));
 }
 
