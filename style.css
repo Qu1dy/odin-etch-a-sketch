@@ -69,9 +69,6 @@ body {
     align-self: center;
 }
 
-.square {
-    border: 2px solid black;
-}
 
 .square:hover {
     border: 2px solid yellow;

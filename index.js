@@ -44,7 +44,6 @@ const createGrid = (amount) => {
             const square = document.createElement("div");
             square.style.width = square.style.height = `${700/amount}px`; 
             square.addEventListener("mousemove", () => colorSquare(square));
-            square.classList.add("square");
             line.appendChild(square);
         }
         colorGrid.appendChild(line)
@@ -82,17 +81,17 @@ const handleCheckboxes = (checkboxClicked) => {
 }
 
 const toggleGridLines = () => {
-    for(const rule of sheet.cssRules)
-    {
-        if(rule.selectorText === ".square")
-        {
-            if(gridLines.checked)
-                rule.style.border = "2px solid black";
-            else
-                rule.style.border = "";
-            return;
-        }
-    }
+    colorGrid.childNodes.forEach(line => {
+        line.childNodes.forEach(square => {
+            {
+                if(gridLines.checked)
+                    square.style.border = "2px solid black";
+                else
+                    square.style.border = "";
+                return;
+            }
+        });
+    })
 }
 
 const startUpdatingMouseState = () => {
@@ -108,7 +107,7 @@ const start = () => {
         checkbox.checked = false;
         checkbox.addEventListener("click", () => handleCheckboxes(checkbox));
     })
-    gridLines.checked = true;
+    gridLines.checked = false;
     clearButton.addEventListener("click", () => createGrid(slider.value));
     downloadButton.addEventListener("click", downloadImage);
     gridLines.addEventListener("click", toggleGridLines);
