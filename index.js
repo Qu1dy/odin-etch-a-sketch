@@ -1,10 +1,12 @@
+const sheet = document.styleSheets[0];
 const colorGrid = document.querySelector(".color-grid");
 const slider = document.querySelector(".slider");
 const sliderTextElement = document.querySelector(".slider-text");
 const opacity = document.querySelector("#brush-opacity");
 const rainbowMode = document.querySelector("#rainbow-mode");
 const eraser = document.querySelector("#eraser");
-const checkboxes = document.querySelectorAll("input[type=checkbox]")
+const gridLines = document.querySelector("#grid-lines");
+const checkboxes = document.querySelectorAll(".canConflict")
 const checkboxesTicked = [];
 const clearButton = document.querySelector("#clear");
 const downloadButton = document.querySelector("#download");
@@ -15,7 +17,7 @@ let cursorURL = null;
 const getRandomRGB = () => {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
-    const b = Math.flxoor(Math.random() * 256);
+    const b = Math.floor(Math.random() * 256);
     return `rgba(${r},${g}, ${b}, ${opacity.value})`;
 }
 
@@ -79,6 +81,20 @@ const handleCheckboxes = (checkboxClicked) => {
     }
 }
 
+const toggleGridLines = () => {
+    for(const rule of sheet.cssRules)
+    {
+        if(rule.selectorText === ".square")
+        {
+            if(gridLines.checked)
+                rule.style.border = "2px solid black";
+            else
+                rule.style.border = "";
+            return;
+        }
+    }
+}
+
 const startUpdatingMouseState = () => {
     document.body.addEventListener("mousedown",() => isMousePressed = true);
     document.body.addEventListener("mouseup", () => isMousePressed = false);
@@ -92,8 +108,10 @@ const start = () => {
         checkbox.checked = false;
         checkbox.addEventListener("click", () => handleCheckboxes(checkbox));
     })
+    gridLines.checked = true;
     clearButton.addEventListener("click", () => createGrid(slider.value));
     downloadButton.addEventListener("click", downloadImage);
+    gridLines.addEventListener("click", toggleGridLines);
 }
 
 start();
