@@ -87,12 +87,13 @@ body {
     font-size: 24px;
 }
 
+
 .slider {
     width: 1020px;
     accent-color: #DED3C4;
 }
 
-#rainbow-mode {
+#rainbow-mode, #eraser {
     width: 16px;
     height: 16px;
     accent-color: #DED3C4;
