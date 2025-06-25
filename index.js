@@ -36,15 +36,19 @@ const createGrid = (amount) => {
     }
 }
 
+
 const colorSquare = (square) => {
     if(!isMousePressed) return;
     let color = square.style.backgroundColor
 
+
+    if(eraser.checked)
+        return square.style.backgroundColor = "";
     if(!color) 
     {
         if(rainbowMode.checked)
             square.style.backgroundColor = getRandomRGB();
-        els
+        else
             square.style.backgroundColor = `rgba(0,0,0,${opacity.value})`;
     }
 }
