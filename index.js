@@ -73,6 +73,7 @@ const start = () => {
     startUpdatingMouseState();
     slider.addEventListener("change", () => {createGrid(slider.value)});
     checkboxes.forEach(checkbox => {
+        checkbox.checked = false;
         checkbox.addEventListener("click", () => handleCheckboxes(checkbox));
     })
 }
