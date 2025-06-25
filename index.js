@@ -1,13 +1,14 @@
 const colorGrid = document.querySelector(".color-grid");
 const slider = document.querySelector(".slider");
 const sliderTextElement = document.querySelector(".slider-text");
+const opacity = document.querySelector("#brush-opacity");
 let isMousePressed = false;
 
 const getRandomRGB = () => {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
     const b = Math.floor(Math.random() * 256);
-    return `rgba(${r},${g}, ${b}, 0.1)`;
+    return `rgba(${r},${g}, ${b}, ${opacity.value})`;
 }
 
 const createGrid = (amount) => {
@@ -35,13 +36,8 @@ const colorSquare = (square) => {
     if(!isMousePressed) return;
     let color = square.style.backgroundColor
 
-    //If already colored
-    if(color) {
-        const [r, g, b, a] = color.match(/[\d.]+/g).map(Number);
-        const newOpacity = Math.min(a + 0.1, 1.0);
-        return square.style.backgroundColor = `rgba(${r}, ${g}, ${b}, ${newOpacity.toFixed(1)})`;
-    }
-    square.style.backgroundColor = getRandomRGB();
+    if(!color) 
+        square.style.backgroundColor = getRandomRGB();
 }
 
 const startUpdatingMouseState = () => {
