@@ -36,6 +36,7 @@ const createGrid = (amount) => {
 const colorSquare = (square) => {
     if(!isMousePressed) return;
     let color = square.style.backgroundColor
+
     if(!color) 
     {
         if(rainbowMode.checked)
@@ -50,6 +51,10 @@ const startUpdatingMouseState = () => {
     document.body.addEventListener("mouseup", () => isMousePressed = false);
 }
 
-createGrid(slider.value);
-startUpdatingMouseState();
-slider.addEventListener("change", () => {createGrid(slider.value)});
+const start = () => {
+    createGrid(slider.value);
+    startUpdatingMouseState();
+    slider.addEventListener("change", () => {createGrid(slider.value)});
+}
+
+start();
