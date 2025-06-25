@@ -105,3 +105,19 @@ body {
     display: flex;
     align-items: center;
 }
+
+
+#clear {
+    font-size: 24px;
+    padding: 16px;
+    width: 250px;
+    margin-top: 475px;
+    align-self: center;
+    background-color: rgba(0,0,0,0);
+    border: 4px solid #DED3C4;
+    border-radius: 15px;
+}
+
+#clear:hover {
+    transform: scale(1.05) translateY(-4px);
+}
