@@ -7,14 +7,25 @@ const eraser = document.querySelector("#eraser");
 const checkboxes = document.querySelectorAll("input[type=checkbox]")
 const checkboxesTicked = [];
 const clearButton = document.querySelector("#clear");
+const downloadButton = document.querySelector("#download");
+
 let isMousePressed = false;
 let cursorURL = null;
 
 const getRandomRGB = () => {
     const r = Math.floor(Math.random() * 256);
     const g = Math.floor(Math.random() * 256);
-    const b = Math.floor(Math.random() * 256);
+    const b = Math.flxoor(Math.random() * 256);
     return `rgba(${r},${g}, ${b}, ${opacity.value})`;
+}
+
+const downloadImage = () => {
+    html2canvas(colorGrid).then(canvas => {
+        const link = document.createElement("a");
+        link.download = "grid.png";
+        link.href = canvas.toDataURL("image/png");
+        link.click();
+    });
 }
 
 const createGrid = (amount) => {
@@ -82,6 +93,7 @@ const start = () => {
         checkbox.addEventListener("click", () => handleCheckboxes(checkbox));
     })
     clearButton.addEventListener("click", () => createGrid(slider.value));
+    downloadButton.addEventListener("click", downloadImage);
 }
 
 start();
