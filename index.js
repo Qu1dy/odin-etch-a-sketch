@@ -6,6 +6,7 @@ const rainbowMode = document.querySelector("#rainbow-mode");
 const eraser = document.querySelector("#eraser");
 const checkboxes = document.querySelectorAll("input[type=checkbox]")
 const checkboxesTicked = [];
+const clearButton = document.querySelector("#clear");
 let isMousePressed = false;
 
 const getRandomRGB = () => {
@@ -76,6 +77,8 @@ const start = () => {
         checkbox.checked = false;
         checkbox.addEventListener("click", () => handleCheckboxes(checkbox));
     })
+
+    clearButton.addEventListener("click", () => createGrid(slider.value));
 }
 
 start();
