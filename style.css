@@ -91,3 +91,16 @@ body {
     width: 1020px;
     accent-color: #DED3C4;
 }
+
+#rainbow-mode {
+    width: 16px;
+    height: 16px;
+    accent-color: #DED3C4;
+}
+
+
+
+.option {
+    display: flex;
+    align-items: center;
+}
