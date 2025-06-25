@@ -44,6 +44,7 @@ const createGrid = (amount) => {
             const square = document.createElement("div");
             square.style.width = square.style.height = `${700/amount}px`; 
             square.addEventListener("mousemove", () => colorSquare(square));
+            square.classList.add("square");
             line.appendChild(square);
         }
         colorGrid.appendChild(line)
