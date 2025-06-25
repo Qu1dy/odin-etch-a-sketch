@@ -73,6 +73,11 @@ body {
     border: 2px solid black;
 }
 
+.square:hover {
+    border: 2px solid yellow;
+}
+
+
 .line {
     display: flex;
     flex-direction: column;
