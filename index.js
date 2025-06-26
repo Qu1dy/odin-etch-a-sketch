@@ -12,7 +12,6 @@ const clearButton = document.querySelector("#clear");
 const downloadButton = document.querySelector("#download");
 
 let isMousePressed = false;
-let cursorURL = null;
 
 const getRandomRGB = () => {
     const r = Math.floor(Math.random() * 256);
