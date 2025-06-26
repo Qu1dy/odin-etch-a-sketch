@@ -98,7 +98,7 @@ body {
     accent-color: #DED3C4;
 }
 
-#rainbow-mode, #eraser {
+#rainbow-mode, #eraser, #grid-lines {
     width: 16px;
     height: 16px;
     accent-color: #DED3C4;
