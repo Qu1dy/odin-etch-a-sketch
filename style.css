@@ -27,7 +27,7 @@ body {
     max-height: 700px;
     display: flex;
     border: 5px solid #DED3C4;
-    background-color: #333;
+    background-color: #777;
     border-radius: 10px;
     box-sizing: border-box;   
 }
