@@ -1,9 +1,12 @@
+* {
+    font-family: 'VT323', monospace;
+}
+
 body {
     display: flex;
     align-items: center;
     flex-direction: column;
     background-color: #555879;
-    font-family: 'VT323', monospace;
 }
 
 .slider-text
@@ -118,13 +121,12 @@ body {
     align-self: center;
     display: flex;
     flex-direction: column;
-    margin-top: 350px;
+    margin-top: 380px;
     gap: 16px;
 }
 
 button {
-    font-size: 24px;
-    padding: 16px;
+    font-size: 42px;
     width: 250px;
     align-self: center;
     background-color: rgba(0,0,0,0);
