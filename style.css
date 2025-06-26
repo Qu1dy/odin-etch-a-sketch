@@ -60,11 +60,6 @@ body {
     border-radius: 8px;
 }
 
-#brush-opacity option {
-    background-color: #DED3C4;
-    border-radius: 8px;
-}
-
 .options .header {
     margin-top: 12px;
     align-self: center;
