@@ -49,6 +49,7 @@ const createGrid = (amount) => {
         }
         colorGrid.appendChild(line)
     }
+    updateGridLines();
 }
 
 
@@ -81,7 +82,7 @@ const handleCheckboxes = (checkboxClicked) => {
     }
 }
 
-const toggleGridLines = () => {
+const updateGridLines = () => {
     colorGrid.childNodes.forEach(line => {
         line.childNodes.forEach(square => {
             {
@@ -111,7 +112,7 @@ const start = () => {
     gridLines.checked = false;
     clearButton.addEventListener("click", () => createGrid(slider.value));
     downloadButton.addEventListener("click", downloadImage);
-    gridLines.addEventListener("click", toggleGridLines);
+    gridLines.addEventListener("click", updateGridLines);
 }
 
 start();
