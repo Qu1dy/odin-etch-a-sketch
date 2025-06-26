@@ -34,7 +34,7 @@ const createGrid = (amount) => {
     const sliderText = sliderTextElement.textContent;
     const sliderTextNew = `${sliderText.split(":")[0]}: ${amount}x${amount})`
     sliderTextElement.textContent = sliderTextNew;
-    colorGrid.innerHTML = " ";
+    colorGrid.innerHTML = "";
     for(let i=0;i<amount;i++)
     {
         const line = document.createElement("div");
