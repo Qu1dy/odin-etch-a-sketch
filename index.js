@@ -6,7 +6,7 @@ const opacity = document.querySelector("#brush-opacity");
 const rainbowMode = document.querySelector("#rainbow-mode");
 const eraser = document.querySelector("#eraser");
 const gridLines = document.querySelector("#grid-lines");
-const checkboxes = document.querySelectorAll(".canConflict")
+const checkboxes = document.querySelectorAll(".canConflict");
 const checkboxesTicked = [];
 const clearButton = document.querySelector("#clear");
 const downloadButton = document.querySelector("#download");
@@ -31,7 +31,7 @@ const downloadImage = () => {
 
 const createGrid = (amount) => {
     const sliderText = sliderTextElement.textContent;
-    const sliderTextNew = `${sliderText.split(":")[0]}: ${amount}x${amount})`
+    const sliderTextNew = `${sliderText.split(":")[0]}: ${amount}x${amount})`;
     sliderTextElement.textContent = sliderTextNew;
     colorGrid.innerHTML = "";
     for(let i=0;i<amount;i++)
@@ -46,7 +46,7 @@ const createGrid = (amount) => {
             square.classList.add("square");
             line.appendChild(square);
         }
-        colorGrid.appendChild(line)
+        colorGrid.appendChild(line);
     }
     updateGridLines();
 }
@@ -54,7 +54,7 @@ const createGrid = (amount) => {
 
 const colorSquare = (square) => {
     if(!isMousePressed) return;
-    let color = square.style.backgroundColor
+    let color = square.style.backgroundColor;
 
     if(eraser.checked)
         return square.style.backgroundColor = "";
@@ -92,7 +92,7 @@ const updateGridLines = () => {
                 return;
             }
         });
-    })
+    });
 }
 
 const startUpdatingMouseState = () => {
@@ -107,7 +107,7 @@ const start = () => {
     checkboxes.forEach(checkbox => {
         checkbox.checked = false;
         checkbox.addEventListener("click", () => handleCheckboxes(checkbox));
-    })
+    });
     gridLines.checked = false;
     clearButton.addEventListener("click", () => createGrid(slider.value));
     downloadButton.addEventListener("click", downloadImage);
