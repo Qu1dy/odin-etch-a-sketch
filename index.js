@@ -66,7 +66,6 @@ const colorSquare = (square) => {
             square.style.backgroundColor = getRandomRGB();
         else
             square.style.backgroundColor = brushColor;
-            console.log(square.style.backgroundColor);
     }
 }
 
