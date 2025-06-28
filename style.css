@@ -45,7 +45,7 @@ body {
 .options {
     background-color: #98A1BC;
     border: 5px solid #DED3C4;
-    width: 300px;
+    width: 400px;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
@@ -136,4 +136,15 @@ button {
 
 button:hover {
     transform: scale(1.05) translateY(-4px);
+}
+
+#set-color input {
+    background-color: #DED3C4;
+    border: 4px solid #DED3C4;
+    width: 50px;
+}
+
+#set-color input[type="submit"] {
+    background-color: #777;
+    width: 80px;
 }

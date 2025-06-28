@@ -9,6 +9,7 @@ const checkboxes = document.querySelectorAll(".canConflict");
 const checkboxesTicked = [];
 const clearButton = document.querySelector("#clear");
 const downloadButton = document.querySelector("#download");
+const colors = document.querySelectorAll(".color");
 
 let isMousePressed = false;
 
@@ -111,6 +112,7 @@ const start = () => {
     clearButton.addEventListener("click", () => createGrid(slider.value));
     downloadButton.addEventListener("click", downloadImage);
     gridLines.addEventListener("click", updateGridLines);
+    colors.forEach(color => color.addEventListener("change", console.log(color.value)));
 }
 
 start();
