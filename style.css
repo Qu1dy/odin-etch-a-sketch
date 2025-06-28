@@ -45,7 +45,7 @@ body {
 .options {
     background-color: #98A1BC;
     border: 5px solid #DED3C4;
-    width: 420px;
+    width: 450px;
     border-radius: 50px;
     display: flex;
     flex-direction: column;
@@ -131,8 +131,8 @@ body {
     align-self: center;
     display: flex;
     flex-direction: column;
-    margin-top: 200px;
     gap: 16px;
+    margin-top: 100px;
 }
 
 button {
