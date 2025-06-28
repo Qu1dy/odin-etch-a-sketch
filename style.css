@@ -65,9 +65,12 @@ body {
     border-radius: 8px;
 }
 
-.options .header {
-    margin-top: 12px;
+.header, .preview {
     align-self: center;
+}
+
+.header {
+    margin-top: 12px;
 }
 
 .square {
@@ -79,6 +82,13 @@ body {
     border: 3px solid red !important;
 }
 
+.preview {
+    width: 150px;
+    height: 150px;
+    background-color: black;
+    border: 4px solid yellow;
+    margin-top: 50px;
+}
 
 .line {
     display: flex;
@@ -121,7 +131,7 @@ body {
     align-self: center;
     display: flex;
     flex-direction: column;
-    margin-top: 380px;
+    margin-top: 200px;
     gap: 16px;
 }
 

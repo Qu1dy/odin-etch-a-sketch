@@ -10,6 +10,7 @@ const checkboxesTicked = [];
 const clearButton = document.querySelector("#clear");
 const downloadButton = document.querySelector("#download");
 const colorForm = document.querySelector(".color-form");
+const preview = document.querySelector(".preview");
 
 let isMousePressed = false;
 let brushColor = `rgba(0,0,0,${opacity.value})`;
@@ -72,6 +73,7 @@ const colorSquare = (square) => {
 
 const updateColor = (r,g,b) => {
     brushColor = `rgba(${r},${g},${b},${opacity.value})`;
+    preview.style.backgroundColor = `rgb(${r}, ${g}, ${b})`;
 } 
 
 const handleCheckboxes = (checkboxClicked) => {
