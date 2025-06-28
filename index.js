@@ -9,8 +9,10 @@ const checkboxes = document.querySelectorAll(".canConflict");
 const checkboxesTicked = [];
 const clearButton = document.querySelector("#clear");
 const downloadButton = document.querySelector("#download");
+const colorForm = document.querySelector(".color-form");
 
 let isMousePressed = false;
+let brushColor = `rgba(0,0,0,${opacity.value})`;
 
 const getRandomRGB = () => {
     const r = Math.floor(Math.random() * 256);
@@ -62,10 +64,15 @@ const colorSquare = (square) => {
         if(rainbowMode.checked)
             square.style.backgroundColor = getRandomRGB();
         else
-            square.style.backgroundColor = `rgba(0,0,0,${opacity.value})`;
+            square.style.backgroundColor = brushColor;
+            console.log(square.style.backgroundColor);
     }
 }
 
+
+const updateColor = (r,g,b) => {
+    brushColor = `rgba(${r},${g},${b},${opacity.value})`;
+} 
 
 const handleCheckboxes = (checkboxClicked) => {
     if(checkboxClicked.checked)
@@ -111,6 +118,9 @@ const start = () => {
     clearButton.addEventListener("click", () => createGrid(slider.value));
     downloadButton.addEventListener("click", downloadImage);
     gridLines.addEventListener("click", updateGridLines);
+    colorForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+    })
 }
 
 start();
