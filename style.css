@@ -139,7 +139,7 @@ button:hover {
 }
 
 #set-color input {
-    background-color: 			#f0f8ff;
+    background-color:#f0f8ff;
     border: 4px solid #555;
     width: 50px;
     font-size: 16px;
@@ -148,6 +148,6 @@ button:hover {
 
 
 #set-color input[type="submit"] {
-    background-color:#f0f8ff;
+    background-color:#7289da;
     width: 80px;
 }
