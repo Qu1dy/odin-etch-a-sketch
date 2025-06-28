@@ -1,4 +1,3 @@
-const sheet = document.styleSheets[0];
 const colorGrid = document.querySelector(".color-grid");
 const slider = document.querySelector(".slider");
 const sliderTextElement = document.querySelector(".slider-text");
